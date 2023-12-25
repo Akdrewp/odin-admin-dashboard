@@ -1,0 +1,64 @@
+.center-main-axis {
+    display: flex;
+    align-items: center;
+}
+
+.dark-purple-bg {
+    background-color: #230046;
+    color: #8f8f8f;
+}
+
+.dark-grey-bg {
+    background-color: #282828;
+    color: #8f8f8f;
+}
+
+h2 {
+    margin: 0;
+}
+
+
+.root-container {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "dashboard content"
+        "footer footer";
+}
+
+.header {
+    grid-area: header;
+}
+
+.dashboard {
+    grid-area: dashboard;
+    padding-left: 10px;
+}
+
+.content {
+    grid-area: content;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.dashboard-icon {
+    width: 25px;
+    height: 25px;
+    background-color: #8f8f8f;
+    border-radius: 6px;
+
+    margin: 8px 10px;
+}
+
+.dashboard-options > div {
+    /* CHANGE LATER */
+}
+
+.logo-icon {
+    width: 80px;
+    height: 80px;
+}
+
+
