@@ -1,27 +1,49 @@
-.center-main-axis {
-    display: flex;
-    align-items: center;
+/* Global variables for colors */
+:root {
+    --light-text-color-dark-bg: #dbdbdb;
+    font-family: Arial, sans-serif;
 }
 
-.dark-purple-bg {
-    background-color: #230046;
-    color: #8f8f8f;
-}
-
-.dark-grey-bg {
-    background-color: #282828;
-    color: #8f8f8f;
-}
-
-h2 {
+body, h1, h2, h3 {
     margin: 0;
 }
 
 
+.center-main-axis {
+    display: flex;
+    justify-content: center;
+}
+
+.center-cross-axis {
+    display: flex;
+    align-items: center;
+}
+
+.light-grey-bg {
+    background-color: #282828;
+    color: var(--light-text-color-dark-bg);
+}
+
+.light-purple-bg {
+    background-color: #37006e;
+    color: var(--light-text-color-dark-bg);
+}
+
+.dark-purple-bg {
+    background-color: #230046;
+    color: var(--light-text-color-dark-bg);
+}
+
+.dark-grey-bg {
+    background-color: #141414;
+    color: var(--light-text-color-dark-bg);
+}
+
 .root-container {
     display: grid;
+    grid-template: auto 1fr auto / auto 1fr;
     grid-template-areas: 
-        "header header"
+        "dashboard header"
         "dashboard content"
         "footer footer";
 }
@@ -37,6 +59,45 @@ h2 {
 
 .content {
     grid-area: content;
+
+    padding: 1em;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "games-overview games-overview games-overview friends-list"
+        "games-overview games-overview games-overview friends-list"
+        "games-overview games-overview games-overview messages-list"
+        "games-overview games-overview games-overview messages-list";
+    gap: 10px;
+}
+
+.games-overview {
+    grid-area: games-overview;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    
+}
+
+.game-mini > img {
+    width: 200px;
+    height: 200px;
+}
+
+.game-mini {
+    text-align: center;
+}
+
+.friends-list {
+    grid-area: friends-list;
+}
+
+.messages-list {
+    grid-area: messages-list;
 }
 
 .footer {
@@ -46,8 +107,8 @@ h2 {
 .dashboard-icon {
     width: 25px;
     height: 25px;
-    background-color: #8f8f8f;
-    border-radius: 6px;
+    background-color: var(--light-text-color-dark-bg);
+    border-radius: 3px;
 
     margin: 8px 10px;
 }
@@ -59,6 +120,25 @@ h2 {
 .logo-icon {
     width: 80px;
     height: 80px;
+}
+
+.profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    margin: 6px;
+    border-radius: 5px;
+    border: 2px solid #141414;
+}
+
+.profile-card > h3{
+    margin: 5px
 }
 
 
